@@ -18,4 +18,4 @@ app.post('/canciones', nuevaCancion)
 app.put('/canciones/:id', editarCancion)
 app.delete('/canciones/:id', eliminarCancion)
 
-app.listen(PORT, console.log(`Server on 🔥 http://localhost:${PORT}`))
+app.listen(PORT, console.log(`Server on 🌈 http://localhost:${PORT}`))
