@@ -1,20 +1,8 @@
 [
-  {
-    "id": 395,
-    "titulo": "aaaaaaaaaa",
-    "artista": "bbbbbbbb",
-    "tono": "ccccccccccerggrg"
-  },
-  {
-    "id": 1300,
-    "titulo": "affae",
-    "artista": "afafwz",
-    "tono": "aefaef"
-  },
-  {
-    "id": 1611,
-    "titulo": "egerg",
-    "artista": "",
-    "tono": ""
-  }
+    {
+        "id": 1,
+        "titulo": "A dios le pido",
+        "artista": "Juanes",
+        "tono": "Em"
+    }
 ]
