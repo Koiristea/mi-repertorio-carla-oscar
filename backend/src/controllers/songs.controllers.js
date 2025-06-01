@@ -22,8 +22,7 @@ const getSong = (req, res) => {
 
 const nuevaCancion = (req, res) => {
   try {
-    const { titulo, artista, tono } = req.body
-    const id = crypto.randomUUID()
+    const { id, titulo, artista, tono } = req.body
     const nueva = { id, titulo, artista, tono }
     const canciones = JSON.parse(fs.readFileSync(REPERTORIO_PATH, 'utf8'))
     canciones.push(nueva)
