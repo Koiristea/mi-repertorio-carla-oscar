@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>E-Sueño - Gestión de Repertorio</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
 </head>
 
 <body>
   <div id="AgregarCancion">
-    <h2 class="pt-3">&#119070; Mi repertorio &#119070;</h2>
+    <h2 class="pt-3">&#119070; E-Sueño - Mi repertorio &#119070;</h2>
 
     <div class="container pt-5 w-50">
       <div>
@@ -37,7 +37,7 @@
           Agregar
         </button>
         <button onclick="editarCancion()" id="editar" class="m-auto btn btn-info">
-          Editar
+          Guardar
         </button>
       </div>
     </div>
@@ -85,6 +85,12 @@
   let canciones = [];
   window.onload = getData();
 
+  // oculatamos el botón de "Editar" al inicio, porque si no hay datos, se ve feo.
+  window.onload = () => {
+    getData()
+    document.getElementById("editar").style.display = 'none'
+  }
+
   async function getData() {
     await axios.get(url).then((data) => {
       canciones = data.data;
@@ -110,12 +116,24 @@
     cancion.value = "";
     artista.value = "";
     tono.value = "";
+
+    document.getElmentById("agregar").style.display = "block"
+    document.getElementById("editar").style.display = "block"
+
   }
 
   function nuevaCancion() {
     cancion;
     artista;
     tono;
+
+    //validamos que existan datos en el formulario
+    if (!cancion.value.trim() || !artista.value.trim() || !tono.value.trim()) {
+      alert("Faltan datos por completar")
+      // detenemos la ejecucion
+      return
+    }
+
     const id = Math.floor(Math.random() * 9999)
     let data = {
       id,

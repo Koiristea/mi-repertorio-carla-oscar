@@ -1,17 +1,17 @@
 {
-  "name": "mi-repertorio-carla-pacheco",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "name": "2",
+  "version": "0.0.1",
+  "main": "server.js",
   "type": "module",
-  "description": "",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
   "dependencies": {
-    "dotenv": "^16.5.0"
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "standard": "^17.1.2"
   }
 }
