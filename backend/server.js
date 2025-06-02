@@ -1,6 +1,6 @@
 import express from 'express'
 import 'dotenv/config'
-import { getHtml, getSong, nuevaCancion, editarCancion, eliminarCancion } from './src/controllers/songs.controllers.js'
+import { getHtml, getSong, nuevaCancion, editarCancion, eliminarCancion } from './src/controllers/songsControllers.js'
 
 // Usamos doble 'pipe' ("||") porque no queremos ningun tipo de 'falsies'
 const PORT = process.env.PORT || 3000
