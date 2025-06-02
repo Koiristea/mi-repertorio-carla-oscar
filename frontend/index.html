@@ -36,7 +36,7 @@
         <button onclick="nuevaCancion()" id="agregar" class="m-auto btn btn-success">
           Agregar
         </button>
-        <button onclick="editarCancion()" id="editar" class="m-auto btn btn-info">
+        <button onclick="guardarCancion()" id="editar" class="m-auto btn btn-info">
           Guardar
         </button>
       </div>
@@ -158,12 +158,12 @@
     tono.value = canciones[i].tono;
     document
       .getElementById("editar")
-      .setAttribute("onclick", `editarCancion('${id}')`);
+      .setAttribute("onclick", `guardarCancion('${id}')`);
     document.getElementById("agregar").style.display = "none";
     document.getElementById("editar").style.display = "block";
   }
 
-  function editarCancion(id) {
+  function guardarCancion(id) {
     axios
       .put(url + "/" + id, {
         id,

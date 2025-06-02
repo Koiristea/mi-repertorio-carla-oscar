@@ -1,6 +1,6 @@
 import express from 'express'
 import 'dotenv/config'
-import { getHtml, getSong, nuevaCancion, editarCancion, eliminarCancion } from './src/controllers/songsControllers.js'
+import { getHtml, getSong, nuevaCancion, guardarCancion, eliminarCancion } from './src/controllers/songsControllers.js'
 
 // Usamos doble 'pipe' ("||") porque no queremos ningun tipo de 'falsies'
 const PORT = process.env.PORT || 3000
@@ -21,7 +21,7 @@ app.get('/canciones', getSong)
 app.post('/canciones', nuevaCancion)
 
 // Actualizamos la informacion de una cancion del repertorio
-app.put('/canciones/:id', editarCancion)
+app.put('/canciones/:id', guardarCancion)
 
 // Borramos una cancion del repertorio
 app.delete('/canciones/:id', eliminarCancion)

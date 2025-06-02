@@ -35,7 +35,7 @@ const nuevaCancion = (req, res) => {
   }
 }
 
-const editarCancion = (req, res) => {
+const guardarCancion = (req, res) => {
   try {
     const { id } = req.params;
     const { titulo, artista, tono } = req.body;
@@ -68,4 +68,4 @@ const eliminarCancion = (req, res) => {
   }
 };
 
-export { getHtml, getSong, nuevaCancion, editarCancion, eliminarCancion }
+export { getHtml, getSong, nuevaCancion, guardarCancion, eliminarCancion }
